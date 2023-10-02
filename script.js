@@ -1,6 +1,7 @@
 let firstNum = 0;
 let secondNum = 0;
 let operator = "";
+let display = document.querySelector(".display");
 
 function operate(first, sign, second){
     let result = 0;
@@ -11,7 +12,7 @@ function operate(first, sign, second){
     else if (sign == "-"){
         result = subtract(first, second)    
     }
-    else if (sign == "*"){
+    else if (sign == "x"){
         result = multiply(first, second)    
     }
     if (sign == "/"){
@@ -36,3 +37,5 @@ function multiply(first, second){
 function divide(first, second){
     return first / second;
 };
+
+display.textContent = operate(firstNum, "+", secondNum);
