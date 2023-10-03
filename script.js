@@ -42,7 +42,10 @@ function divide(first, second){
 };
 
 function updateDisplay(item){ //Add function to allow decimal on second number
-    if (display.textContent == "0" && item != "."){
+    if (secondNum.length > 0){
+        display.textContent = item;
+        secondNum = "";
+    } else if (display.textContent == "0" && item != "."){
         display.textContent = item;
     } else if (display.textContent == "0."){
         display.textContent += item;
@@ -69,15 +72,15 @@ function resetToZero(){
 
 function storeDisplay(operation){
     operator = operation;
+    secondNum = "";
 
     if (firstNum.length == 0){
         firstNum = display.textContent;
         display.textContent += operation;
     } else if (firstNum.length > 0){
         let position = 0;
-        position = display.textContent.indexOf(`${operation}`);
-        secondNum = display.textContent.slice(position+1, display.textContent.length);
-        console.log(firstNum, secondNum);
+        position = display.textContent.indexOf(`${operation}`)+1;
+        secondNum = display.textContent.slice(position, display.textContent.length);
         display.textContent = operate(firstNum, operation, secondNum);
         firstNum = "";
         secondNum = "";
@@ -90,10 +93,9 @@ function equals(){
     if (firstNum.length == 0){
         display.textContent = display.textContent;
     } else {
-        position = display.textContent.indexOf(`${operator}`);
-        secondNum = display.textContent.slice(position+1, display.textContent.length);
+        position = display.textContent.indexOf(`${operator}`)+1;
+        secondNum = display.textContent.slice(position, display.textContent.length);
         display.textContent = operate(firstNum, operator, secondNum);
         firstNum = "";
-        secondNum = "";
     }
 }
