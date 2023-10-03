@@ -34,7 +34,7 @@ body{
     align-items: center;
     padding: 5px;
     font-size: 2em;
-    background-color: #e1e1e1;
+    background-color: #e1e1e1b7;
 }
 
 .btnArea{
@@ -52,7 +52,7 @@ body{
     margin: 5px;
     text-align: center;
     font-size: 2em;
-    background: #62acb5;
+    background: #83cad3;
     box-shadow: 0.1em 0.1em;
 }
 
