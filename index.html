@@ -11,24 +11,24 @@
     <div class="calculator">
         <div class ="display"></div>
         <div class ="btnArea">
-            <button class ="button">AC</button>
-            <button class ="button">C</button> 
+            <button class ="button" onclick="resetToZero()">AC</button>
+            <button class ="button" onclick="backspace()">C</button> 
             <button class ="button">/</button>    
             <button class ="button">x</button>    
-            <button class ="button">7</button>    
-            <button class ="button">8</button>    
-            <button class ="button">9</button>    
+            <button class ="button" onclick="updateDisplay(this.innerText)">7</button>    
+            <button class ="button" onclick="updateDisplay(this.innerText)">8</button>    
+            <button class ="button" onclick="updateDisplay(this.innerText)">9</button>    
             <button class ="button">-</button> 
-            <button class ="button">4</button>
-            <button class ="button">5</button>    
-            <button class ="button">6</button>    
+            <button class ="button" onclick="updateDisplay(this.innerText)">4</button>
+            <button class ="button" onclick="updateDisplay(this.innerText)">5</button>    
+            <button class ="button" onclick="updateDisplay(this.innerText)">6</button>    
             <button class ="button">+</button>    
-            <button class ="button">1</button>    
-            <button class ="button">2</button>    
-            <button class ="button">3</button>    
-            <button class ="button">.</button>    
+            <button class ="button" onclick="updateDisplay(this.innerText)">1</button>    
+            <button class ="button" onclick="updateDisplay(this.innerText)">2</button>    
+            <button class ="button" onclick="updateDisplay(this.innerText)">3</button>    
+            <button class ="button" onclick="updateDisplay(this.innerText)">.</button>    
             <button class ="button" id="equals">=</button>    
-            <button class ="button" id="zero">0</button>     
+            <button class ="button" id="zero" onclick="updateDisplay(this.innerText)">0</button>     
        </div>
     </div>
     
