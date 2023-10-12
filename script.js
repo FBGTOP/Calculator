@@ -2,7 +2,9 @@ let firstNum = "";
 let secondNum = "";
 let operator = "";
 let display = document.querySelector(".display");
+let secondaryDisp = document.getElementById("previousCalc");
 display.textContent = "0";
+secondaryDisp.textContent = "";
 
 function operate(first, sign, second){
     let result = 0;
@@ -41,61 +43,19 @@ function divide(first, second){
     return first / second;
 };
 
-function updateDisplay(item){ //Add function to allow decimal on second number
-    if (secondNum.length > 0){
-        display.textContent = item;
-        secondNum = "";
-    } else if (display.textContent == "0" && item != "."){
-        display.textContent = item;
-    } else if (display.textContent == "0."){
-        display.textContent += item;
-    } else if (display.textContent.includes(".") && item =="."){
-        display.textContent = display.textContent;
-    } else {
-        display.textContent += item;
-    }
-}
-
 function backspace(){
     if (display.textContent.length == 1){
         display.textContent = 0;
     } else {
         display.textContent = display.textContent.slice(0,-1);
+        firstNum = "";
     }
 }
 
 function resetToZero(){
     firstNum = "";
     secondNum = "";
+    operator = "";
     display.textContent = "0";
-}
-
-function storeDisplay(operation){
-    operator = operation;
-    secondNum = "";
-
-    if (firstNum.length == 0){
-        firstNum = display.textContent;
-        display.textContent += operation;
-    } else if (firstNum.length > 0){
-        let position = 0;
-        position = display.textContent.indexOf(`${operation}`)+1;
-        secondNum = display.textContent.slice(position, display.textContent.length);
-        display.textContent = operate(firstNum, operation, secondNum);
-        firstNum = "";
-        secondNum = "";
-    }
-}
-
-function equals(){
-    let position = 0;
-
-    if (firstNum.length == 0){
-        display.textContent = display.textContent;
-    } else {
-        position = display.textContent.indexOf(`${operator}`)+1;
-        secondNum = display.textContent.slice(position, display.textContent.length);
-        display.textContent = operate(firstNum, operator, secondNum);
-        firstNum = "";
-    }
+    secondaryDisp.textContent = "";
 }
