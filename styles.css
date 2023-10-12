@@ -25,16 +25,32 @@ body{
     background-color: #9ed7df;
 }
 
+.dispContainer{
+    height: 100px;
+    width: auto;
+}
+
 .display{
     border: solid black 2px;  /*To temporary for setup*/
     height: 100px;
+    width: 360px;
     border-radius: 30px;
     display:flex;
     justify-content: right;
-    align-items: center;
-    padding: 5px;
+    align-items: flex-end;
+    padding: 10px;
     font-size: 2em;
     background-color: #e1e1e1b7;
+    position: absolute;
+}
+
+#previousCalc{
+    height: 50px;
+    font-size: 1.5em;
+    border: none;
+    position: absolute;
+    background-color: transparent;
+
 }
 
 .btnArea{
